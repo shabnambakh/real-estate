@@ -1,0 +1,96 @@
+body{
+    background-color: #f4f4f4;
+}
+b{
+    font-size: 11px;
+}
+.box-shadow {
+    box-shadow: 0 0.25rem 0.75rem rgba(130, 130, 130, 0.05);
+}
+
+.total{
+    font-size: 13px;
+    margin-left: 10px;
+}
+.brand{
+    color: #00d600;
+}
+
+.custom{
+    background-color: #00d600;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-size: 14px;
+}
+
+.custom:hover{
+    background-color: #00be00;
+}
+
+.custom-outline{
+    color: #00d600;
+    border-color: #00d600;
+    border-radius: 20px;
+    padding: 7px 24px;
+    font-size: 14px;
+}
+.custom-outline:hover{
+    background-color: #00d600;
+    border-color: #00d600;
+}
+
+.red{
+    color: rgba(255, 0, 0, 0.68);
+    border-color: rgba(255, 0, 0, 0.68);
+}
+
+.grey{
+    background-color: #b0b0b0;
+}
+.custom.grey:hover{
+    background-color: #919191;
+}
+
+.custom-outline.red:hover{
+    background-color: rgba(255, 0, 0, 0.68);
+    border-color: rgba(255, 0, 0, 0.68);
+}
+.custom svg, .custom-outline svg{
+    margin-right: 6px;
+}
+form  {
+    margin: 60px 0 0 0 !important;
+    background-color: white;
+    padding: 20px;
+ }
+
+input[type="range"][multiple] {
+  display: block;
+  height: 2em;
+  margin: 0;
+  pointer-events: none;
+}
+input[type="range"][multiple] + input[type="range"][multiple] {
+  margin-top: -2em;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+}
+
+input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+}
+
+input[type="range"]::-ms-thumb {
+  pointer-events: all;
+}
+
+.card {
+    border: none !important;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+
+}

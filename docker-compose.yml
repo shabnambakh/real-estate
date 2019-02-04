@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    restart: always
+    image: postgres
+  broker:
+    restart: always
+    image: redis:latest
+    container_name: "broker"
+    hostname: "redis"
+    expose:
+      - "6379"
+  web:
+    restart: always
+    build: .
+    command: /bin/bash -c "python manage.py collectstatic --noinput &&
+                           python manage.py migrate &&
+                           python manage.py add_cities &&
+                           python manage.py add_apartments &&
+                           gunicorn real_estate.wsgi:application -w 2 -b :8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  celery:
+    build: .
+    command: celery worker -A real_estate.celery --loglevel=INFO
+    links:
+      - db
+      - broker
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
+    container_name: elasticsearch
+    ports:
+      - 9200:9200

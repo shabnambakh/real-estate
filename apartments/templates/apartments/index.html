@@ -1,0 +1,79 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'apartments/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'apartments/css/bootstrap-slider.css' %}">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'apartments/css/style.css' %}">
+
+    <title>Apartments</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="return false">
+            <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="rooms">Кол-во комнат:</label>
+                    <select class="form-control" id="rooms" multiple>
+                        <option value="studio">Студия</option>
+                        <option value="1">1-комнатная квартира</option>
+                        <option value="2">2-комнатная квартира</option>
+                        <option value="3">3-комнатная квартира</option>
+                        <option value="4">4-комнатная квартира</option>
+                        <option value="5">5-комнатная квартира</option>
+                        <option value="6">6-комнатная квартира</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="balcony_type">Тип балкона:</label>
+                    <select class="form-control" id="balcony_type" multiple>
+                        <option value="1b">Балкон</option>
+                        <option value="1l">Лоджия</option>
+                        <option value="1b1l">Балкон и лоджия</option>
+                    </select>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="city">Город</label>
+                <select class="form-control" id="city"></select>
+            </div>
+            <div class="form-group">
+                    <label for="price_range" class="control-label">Цена:</label>
+                    <b id="min_price"></b>
+                        <input id="price_range" type="text" class="span2" data-slider-step="100" />
+                    <b id="max_price"></b><span class="total" id="totalPrice"></span>
+                </div>
+                <div class="form-group">
+                    <label for="area_range">Площадь:</label>
+                    <b id="min_area"></b>
+                        <input id="area_range" type="text" class="span2" data-slider-step="1" />
+                    <b id="max_area"></b> <span class="total" id="totalArea"></span>
+                </div>
+                <div class="checkbox">
+                    <label><input id="mortgage" type="checkbox"> Ипотека</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="army_mortgage" type="checkbox"> Военная ипотека</label>
+                </div>
+            <button id="submit" class="btn btn-primary">Показать: <span id="count"></span> вариантов</button>
+        </form>
+    </div>
+        <div id="apartmentList" class="container pt-4">
+        </div>
+    <script lang="javascript">var address = '{{ request.META.HTTP_NAME }}';</script>
+    <script src="{% static 'apartments/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'apartments/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'apartments/js/bootstrap-slider.js' %}"></script>
+    <script src="{% static 'apartments/js/script.js' %}"></script>
+</body>
+</html>

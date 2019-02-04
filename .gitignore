@@ -1,0 +1,14 @@
+*.py[cod]
+*.out
+*.mo
+.idea/
+celerybeat*
+env
+venv
+.coverage
+tmp
+htmlcov/*
+.venv
+*.log
+.pytest_cache
+*.iml
